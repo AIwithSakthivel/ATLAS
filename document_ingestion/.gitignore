@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+
+# Runtime output — regenerated per run, not part of the repo
+logs/
+data/
+*.pdf
