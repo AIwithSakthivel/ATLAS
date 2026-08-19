@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+
+# Run output — regenerated per run, not part of the repo
+results/

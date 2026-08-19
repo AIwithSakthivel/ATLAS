@@ -22,13 +22,14 @@ papers.
 ## Pipeline stages
 
 1. **Document ingestion** — available now
-2. **Taxonomy extraction**
-3. **Statistical insights**
-4. **Reasoning**
+2. **Research extraction** — available now
+3. **Taxonomy extraction**
+4. **Statistical insights**
+5. **Reasoning**
 
 ## Available: document ingestion
 
-[`document_ingestion/`](document_ingestion/) is the first implemented stage.
+[`document_ingestion/`](https://github.com/AIwithSakthivel/ATLAS/blob/main/document_ingestion) is the first implemented stage.
 Given a paper landing-page URL, it creates a normalized, page-traceable package
 containing extracted text and selected page images where visual evidence is
 needed.
@@ -38,11 +39,31 @@ It validates source PDFs, reconstructs academic-paper reading order, handles
 tables and OCR when necessary, and preserves links back to the original paper
 pages.
 
-See the [document ingestion README](document_ingestion/README.md) for
+See the [document ingestion README](https://github.com/AIwithSakthivel/ATLAS/blob/main/document_ingestion/README.md) for
 installation, usage, outputs, and implementation details.
+
+## Available: research extraction
+
+[`extraction/`](https://github.com/AIwithSakthivel/ATLAS/blob/main/extraction) converts each paper's ingested
+representation into structured, evidence-grounded research information: eight
+standard research dimensions (problem gap, contribution, technical approach,
+datasets/benchmarks, contribution type, evaluation summary, reproducibility,
+and limitations), each backed by exact source-text evidence and a confidence
+score.
+
+Extraction is powered by a pluggable LLM client that you supply — the module
+itself has no third-party dependencies and defines only the extraction
+contract, concurrency, validation, and checkpointing around it. Every
+extracted value is validated against a strict schema before being accepted,
+and runs are resumable: papers that already succeeded are skipped
+automatically.
+
+See the [extraction README](https://github.com/AIwithSakthivel/ATLAS/blob/main/extraction/README.md) for
+installation, usage, the field contract, and output format.
 
 ## Project status
 
-Only document ingestion is currently included in this repository. The remaining
-pipeline stages are listed to show the intended flow; their implementations are
-still under review and will be added separately.
+Document ingestion and research extraction are currently included in this
+repository. The remaining pipeline stages (taxonomy extraction, statistical
+insights, reasoning) are listed to show the intended flow; their
+implementations are still under review and will be added separately.
