@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+
+# Run output and local vector store — regenerated per run, not part of the repo
+chroma_db/
+runs/
