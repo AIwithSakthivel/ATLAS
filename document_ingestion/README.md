@@ -1,5 +1,7 @@
 # Atlas document ingestion
 
+![Document ingestion pipeline](https://raw.githubusercontent.com/AIwithSakthivel/atlas-assets/main/images/atlast_document_ingestion.png)
+
 Deterministic PDF-to-LLM-context ingestion for academic papers. Given a paper URL, it produces a page-traceable text representation plus a selective set of rendered page images — with zero generative model calls anywhere in the pipeline.
 
 This is stage one of [Atlas](../), a larger project. Ingestion produces the normalized package that later Atlas stages (taxonomy extraction, reasoning) consume.

@@ -1,5 +1,7 @@
 # Atlas embedding creation
 
+![Embedding creation pipeline](https://raw.githubusercontent.com/AIwithSakthivel/atlas-assets/main/images/atlas_embedding_creation.png)
+
 This is stage four of [Atlas](../): it converts each successfully extracted
 paper into vector representations, so that later stages can compare, cluster,
 and search across a corpus that otherwise has no common structure at all.

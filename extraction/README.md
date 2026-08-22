@@ -1,5 +1,7 @@
 # Atlas extraction
 
+![Research extraction pipeline](https://raw.githubusercontent.com/AIwithSakthivel/atlas-assets/main/images/atlas_extraction.png)
+
 Converts each paper's ingested representation into structured, evidence-grounded research information. Given an artifact directory produced by [`document_ingestion`](../document_ingestion), it extracts eight standard research dimensions per paper, each backed by exact source-text evidence and a confidence score — through a pluggable LLM client you supply.
 
 This is stage two of [Atlas](../), inserted ahead of taxonomy extraction: taxonomy construction, statistical insights, and reasoning all consume the structured corpus this stage produces.
