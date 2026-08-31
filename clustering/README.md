@@ -1,5 +1,7 @@
 # Atlas semantic clustering
 
+![Semantic clustering pipeline](../images/atlast_clustering.png)
+
 This is stage five of [Atlas](../): it turns the paper-level vectors produced
 by [`embeddings`](../embeddings) into candidate research groups. The stage
 discovers structure only — it does not name or interpret what a group is
