@@ -25,7 +25,7 @@ stage while preserving a link back to the underlying papers.
 1. **Document ingestion** — available now
 2. **Research extraction** — available now
 3. **Embedding creation** — available now
-4. **Semantic clustering**
+4. **Semantic clustering** — available now
 5. **Cluster interpretation**
 6. **Canonical taxonomy and assignment**
 7. **Research-landscape statistics**
@@ -120,15 +120,34 @@ See the [embedding creation README](https://github.com/AIwithSakthivel/ATLAS/blo
 the design rationale, installation, usage, and the required embedding-client
 interface.
 
+## Available: semantic clustering
+
+[`clustering/`](https://github.com/AIwithSakthivel/ATLAS/blob/main/clustering) turns the paper-level
+vectors produced by embedding creation into candidate research groups. It
+validates and L2-normalizes the embedding space, reduces it with UMAP, and
+discovers dense regions with HDBSCAN — without having to specify the number
+of clusters in advance and without forcing every paper into a group.
+
+Each discovered cluster gets a centroid computed in the original normalized
+embedding space, representative papers ranked by centroid similarity,
+boundary papers ranked by HDBSCAN membership probability, and a ranked list
+of its nearest neighboring clusters. Corpus- and cluster-level diagnostics,
+and a separate visualization/inspection layer, are generated from the same
+run artifacts. Clustering discovers structure only; naming what a cluster
+represents is left to the next stage, cluster interpretation.
+
+See the [semantic clustering README](https://github.com/AIwithSakthivel/ATLAS/blob/main/clustering/README.md) for
+the design rationale, installation, usage, and output format.
+
 ## Project status
 
-**Pushed so far:** document ingestion, research extraction, and embedding
-creation — stages 1–3 above.
+**Pushed so far:** document ingestion, research extraction, embedding
+creation, and semantic clustering — stages 1–4 above.
 
-**Not yet in this repository:** semantic clustering, cluster interpretation,
-canonical taxonomy and assignment, research-landscape statistics, and Atlas
-web delivery. These are listed to show the intended flow; their
-implementations are still under review and will be added separately.
+**Not yet in this repository:** cluster interpretation, canonical taxonomy
+and assignment, research-landscape statistics, and Atlas web delivery. These
+are listed to show the intended flow; their implementations are still under
+review and will be added separately.
 
 Conference acquisition (fetching accepted-paper metadata and PDF URLs from
 ACL/ICLR sources) exists as working code ahead of document ingestion in the

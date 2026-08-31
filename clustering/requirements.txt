@@ -1,0 +1,6 @@
+chromadb
+numpy
+umap-learn
+hdbscan
+matplotlib
+pandas
